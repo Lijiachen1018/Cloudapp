@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Group</title>
+</head>
+<body>
+<div class="section-title">
+    <h2>Edit details for your group</h2>
+</div>
+
+<div>
+    <!-- Start Create New Group Form -->
+    <form action="#" class="create-group-form" >
+        <div class="form-group">
+            <label for="groupname" class="sr-only">GroupName</label>
+            <input type="text" class="form-control" id="groupname" placeholder="GroupName" autocomplete="off" maxlength="20" >
+        </div>
+
+        <div class="form-group">
+            <label for="countryname" class="sr-only">Country</label>
+            <select class="form-control" id="countryname" >
+
+                <!-- insert loop here -->
+                <option> the United Kingdom</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="cityname" class="sr-only">City</label>
+            <select class="form-control" id="cityname">
+
+                <!-- insert loop here -->
+                <option> London</option>
+
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="expectednumber" class="sr-only">Expected Number of Member</label>
+            <input type="number" id="expectednumber" min="2">
+        </div>
+
+        <div class="form-group">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </form>
+    <!-- END Create New Group Form -->
+</div>
+
+
+</body>
+</html>
