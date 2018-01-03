@@ -22,4 +22,10 @@ class Book(models.Model):
     publisher = models.ForeignKey(Publisher)
     publication_date = models.DateField()
 
+class User(models.Model):
+    username = models.CharField(max_length=50)
+    password = models.CharField(max_length=50)
+
+
+
 

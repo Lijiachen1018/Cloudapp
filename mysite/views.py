@@ -44,3 +44,29 @@ def Login(request):
 
 def sign_up(request):
     return render_to_response('sign_up.html', {})
+
+def search_form(request):
+    return render_to_response('search_form.html')
+
+def search(request):
+    if 'q' in request.GET:
+        message = 'You searched for: %r' % request.GET['q']
+    else:
+        message = 'You submitted an empty form.'
+    return HttpResponse(message)
+'''
+def show_color(request): 
+    if "favorite_color" in request.COOKIES: 
+        return HttpResponse("Your favorite color is %s" %request.COOKIES["favorite_color"]) 
+    else: 
+        return HttpResponse("You don't have a favorite color.")
+
+def set_color(request):
+    if "favorite_color" in request.GET:
+        response = HttpResponse("Your favorite color is now %s" %request.GET["favorite_color"])
+        response.set_cookie("favorite_color",request.GET["favorite_color"])
+        return response
+    else:
+        return HttpResponse("You didn't give a favorite color.")
+
+'''
