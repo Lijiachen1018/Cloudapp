@@ -29,12 +29,12 @@ def create_new_group(request):
 
 def Homepage(request):
     return render_to_response('Homepage.html', {})
-
+'''
 def Forgot(request):
     return render_to_response('Forgot.html', {})
-
+'''
 def group_list(request):
-    return render_to_response('group_list.html', {})
+    return render_to_response('groupList.html', {})
 
 def group_detail(request):
     return render_to_response('group_detail.html', {})
