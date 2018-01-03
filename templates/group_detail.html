@@ -3,7 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <title>Group Detail</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
+
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
+
+    <script>
+        function joinFunction() {
+            window.location.href="myGroupDetail.html";
+        }
+    </script>
 </head>
+
+<h1 style="margin-left: 20px">DETAILS</h1>
+
 <body>
+<div class="whole-container"  style="margin-top:10%;text-align: center">
+
+    <h2>Group Name</h2>
+    <div style="width: inherit">
+        <h3>Expected Number of Member: </h3>
+        <h3>Current Number of Member:
+            <p>
+                <button id="btn1" type="button" class="btn" data-toggle="modal" data-target="#collapseExample">View the Members</button>
+            </p>
+        </h3>
+
+        <div class="modal fade" id="collapseExample">
+            <div class="modal-dialog">
+                <div class="modal-content" style="text-align: start">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">close</span></button>
+                        <h4 class="modal-title">All Members</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p style="font-size: larger; color: #2aabd2;">
+                            aaaaaaaaaaaaaa bbb ccc dddddd eeeeeeeee fffff
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <h3>Destination:</h3>
+        <h3>Organiser:</h3>
+        <h3>Gathering Place:</h3>
+
+        <!-- 对话框触发按钮 -->
+        <a type="button" id="join-group" class="btn btn-info"  data-toggle="modal" data-target="#myModal">JOIN IN</a>
+
+        <!-- 对话框HTML -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content" style="text-align: start">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">close</span></button>
+                        <h4 class="modal-title">Important</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Do you want to join this group?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        <button id="yes-to-join" type="button" class="btn btn-primary" onclick="joinFunction()">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
