@@ -33,7 +33,7 @@ def Homepage(request):
 def Forgot(request):
     return render_to_response('Forgot.html', {})
 '''
-def group_list(request):
+def groupList(request):
     return render_to_response('groupList.html', {})
 
 def group_detail(request):
