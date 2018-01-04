@@ -39,6 +39,15 @@ def groupList(request):
 def group_detail(request):
     return render_to_response('group_detail.html', {})
 
+def myGroups(request):
+    return render_to_response('myGroups.html', {})
+
+def myGroupDetail_organiser(request):
+    return render_to_response('myGroupDetail_organiser.html', {})
+
+def myGroupDetail_member(request):
+    return render_to_response('myGroupDetail_member.html', {})
+
 def Login(request):
     return render_to_response('Login.html', {})
 
