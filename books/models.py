@@ -1,9 +1,9 @@
 from django.db import models
 
-STATUS_CHOICES = (
+'''STATUS_CHOICES = (
     ('u', 'un_go'),
     ('d', 'done'),
-)
+)'''
 
 
 class User(models.Model):
@@ -36,13 +36,13 @@ class City(models.Model):
 class Group(models.Model):
     g_name = models.CharField(max_length=30,default='DEFAULT VALUE')
     g_organiser = models.ForeignKey(User, related_name='user_organiser')
-    g_member = models.CharField(blank=False,default='DEFAULT VALUE')
+    g_member = models.CharField(max_length=100, default='DEFAULT VALUE')
     g_place = models.ForeignKey(City, related_name='group_gatherplace')
     g_city = models.ForeignKey(City, related_name='group_city')
     g_content = models.TextField(max_length=100, null=True, blank=True)
-    g_state = models.CharField(max_length=1, default='DEFAULT VALUE', choices=STATUS_CHOICES)
+    g_state = models.CharField(max_length=1, default='DEFAULT VALUE')
     g_country = models.ForeignKey(Country, related_name='group_country')
-    g_createdtime = models.DateTimeField(default='DEFAULT VALUE',auto_now_add=True, null=True, blank=True)
+    g_createdtime = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.g_name
@@ -52,7 +52,7 @@ class Comment(models.Model):
     article = models.ForeignKey(Group, related_name='article_comment')
     detail = models.TextField(max_length=128,default='DEFAULT VALUE')
     user = models.ForeignKey(User, related_name='user_comment')
-    created_time = models.DateTimeField(default='DEFAULT VALUE', auto_now_add=True, null=True, blank=True)
+    created_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
         return self.detail
