@@ -2,16 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>login</title>
+    <title>regist</title>
 </head>
 <body>
-<h1>login  page</h1>
+<h1>regist page</h1>
 <form method = 'post' enctype="multipart/form-data">
     {% csrf_token %}
     {{uf.as_p}}
     <input type="submit" value = "ok" />
 </form>
 <br>
-<a href="http://127.0.0.1:8000/books/regist/">regist</a>
+<a href="http://127.0.0.1:8000/books/login/">login</a>
 </body>
 </html>

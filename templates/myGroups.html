@@ -11,19 +11,39 @@
 <h1 style="margin-left: 2%;">Groups you are in:</h1>
 <div class="whole-container">
     <!-- cards again-->
+    {% for m_group in m_groups %}
     <div class="cards cards-borderless" style="float: left; height: 200px; width: 20%; margin-left: 2%; margin-top:15px;">
-        <a class="card" href="myGroupDetail(member).html">
+        <a class="card" href="myGroupDetail_member.html/{{m_group.id}}">
             <img id="city img" src="/templates/images/demo/portfolio-2.jpg" alt="">
-            <div class="card-heading"><strong id="group name">GroupName</strong></div>
+            <div class="card-heading"><strong id="group name">GroupName:{{m_group.g_name}}</strong></div>
             <div class="card-content text-muted">
-                <p id="destination">Destination:</p>
-                <p id="organiser">Organiser:</p>
-                <p id="gathering-place">GatheringPlace:</p>
-                <p id="status">Status:</p>
+                <p id="destination">Destination:{{m_group.g_city}}</p>
+                <p id="organiser">Organiser:{{m_group.g_organiser}}</p>
+                <p id="gathering-place">GatheringPlace:{{m_group.g_place}}</p>
+                <p id="status">Status:{{status}}</p>
             </div>
         </a>
     </div>
+    {% endfor %}
 
+</div>
+<h1 style="margin-left: 2%;">Groups you organised:</h1>
+<div class="whole-container">
+    <!-- cards again-->
+    {% for o_group in o_groups %}
+    <div class="cards cards-borderless" style="float: left; height: 200px; width: 20%; margin-left: 2%; margin-top:15px;">
+        <a class="card" href="myGroupDetail_organiser.html/{{o_group.id}}">
+            <img id="city img1" src="/templates/images/demo/portfolio-2.jpg" alt="">
+            <div class="card-heading"><strong id="group name1">GroupName:{{o_group.g_name}}</strong></div>
+            <div class="card-content text-muted">
+                <p id="destination1">Destination:{{o_group.g_city}}</p>
+                <p id="expected number of member">Expected Number of Member:{{o_group.g_member}}</p>
+                <p id="gathering-place1">GatheringPlace:{{o_group.g_place}}</p>
+                <p id="status1">Status:{{status}}</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
 
 </div>
 </body>
