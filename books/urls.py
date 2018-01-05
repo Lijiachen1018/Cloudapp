@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, url
-from books import views
+from . import views
 
 urlpatterns = patterns('',
     url(r'^$', views.login, name='login'),
