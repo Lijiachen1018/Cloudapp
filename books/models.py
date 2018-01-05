@@ -7,13 +7,16 @@ from django.core.urlresolvers import reverse
     ('d', 'done'),
 )'''
 
-
+# python manage.py makemigrations books
+# python manage.py sqlmigrate books 0001
+# python manage.py migrate
+# python manage.py runserver
 class User(models.Model):
-    email = models.EmailField(null=True, blank=True)
+    email = models.EmailField(max_length=30,default='DEFAULT VALUE')
     username = models.CharField(max_length=30, default='DEFAULT VALUE')
     password = models.CharField(max_length=128, default='DEFAULT VALUE')
-    firstname = models.CharField(max_length=30, null=True, blank=True)
-    lastname = models.CharField(max_length=30, null=True, blank=True)
+    firstname = models.CharField(max_length=30, default='DEFAULT VALUE')
+    lastname = models.CharField(max_length=30, default='DEFAULT VALUE')
 
     def __str__(self):
         return self.username

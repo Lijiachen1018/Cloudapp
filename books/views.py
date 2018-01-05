@@ -6,24 +6,33 @@ from django import forms
 from models import User,Country,City,Group,Comment,GroupMember
 
 
+class UserFormRe(forms.Form):
+    email = forms.EmailField(label='email',max_length=30)
+    username = forms.CharField(label='username',max_length=100)
+    password = forms.CharField(label='password',widget=forms.PasswordInput())
+    firstname = forms.CharField(label='firstname',max_length=30)
+    lastname = forms.CharField(label='lastname',max_length=30)
+
 class UserForm(forms.Form):
     username = forms.CharField(label='username',max_length=100)
     password = forms.CharField(label='password',widget=forms.PasswordInput())
 
-
 #注册
 def regist(req):
     if req.method == 'POST':
-        uf = UserForm(req.POST)
+        uf = UserFormRe(req.POST)
         if uf.is_valid():
             #获得表单数据
+            email = uf.cleaned_data['email']
             username = uf.cleaned_data['username']
             password = uf.cleaned_data['password']
+            lastname = uf.cleaned_data['lastname']
+            firstname = uf.cleaned_data['firstname']
             #添加到数据库
-            User.objects.create(username= username,password=password)
+            User.objects.create(username= username,password=password,email=email,firstname=firstname,lastname=lastname)
             return HttpResponse('regist success!!')
     else:
-        uf = UserForm()
+        uf = UserFormRe()
 
     return render_to_response('regist.html',{'uf':uf}, context_instance=RequestContext(req))
 
@@ -40,7 +49,7 @@ def login(req):
             user = User.objects.filter(username__exact = username,password__exact = password)
             if user:
                 #比较成功，跳转index
-                response = HttpResponseRedirect('/books/Homepage/')
+                response = HttpResponseRedirect('/books/index/')
                 #将username写入浏览器cookie,失效时间为3600
                 response.set_cookie('username',username,3600)
                 return response
@@ -49,13 +58,13 @@ def login(req):
                 return HttpResponseRedirect('/books/login/')
     else:
         uf = UserForm()
-    return render_to_response('login.html',{'uf':uf},context_instance=RequestContext(req))
+    return render_to_response('Login.html',{'uf':uf},context_instance=RequestContext(req))
 
 
 #登陆成功
 def index(req):
     username = req.COOKIES.get('username','')
-    return render_to_response('Homepage.html', {'username': username})
+    return render_to_response('index.html', {'username': username})
 
 
 #退出
