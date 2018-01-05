@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GroupList</title>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
+</head>
+<body>
+<div style="width: 100%; height: 40px; text-align: center;">
+    <form id="search for groups" onsubmit="" name="SearchForm" action="groupList.html" style="margin-top: 2%;" >
+        <input type="text" id="city-search" placeholder="Search City or Group" style="width:50%;">
+        <input type="submit" id="search" value="search">
+    </form>
+</div>
+
+<h1 style="margin-left: 15px"><a href="groupList.html/{{ country.id }}">Groups going to {{ country.c_name }}</a></h1>
+
+<div id="whole-content" style="width: 100%; height: 100%;">
+
+    <!-- /.container  to insert loop here-->
+    {% for group in groups %}
+    <div class="cards cards-borderless" style="float: left; height: 300px; width: 20%; margin-left: 2%; margin-top:15px;">
+        <a id="click to see detail" href="/group_detail.html/{{group.id}}">
+            <img id="country img" class="group-img" src="/templates/images/demo/Italy_1_Li.jpg" style="width: 100%; height: 60%; float: inherit">
+            <div class="card-heading"><strong id="group name">GroupName:{{group.g_name}}</strong></div>
+            <div class="card-content text-muted">
+                <p id="expected number of member">Expected Number of member:{{group.g_member}} </p>
+                <p id="destination">Destination: {{group.g_country}}{{group.g_city}}</p>
+                <p id="organiser">Organiser:{{group.g_organiser}} </p>
+                <p style="font-size: larger; text-align: center; color: #2b669a;">Join Them</p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
