@@ -12,8 +12,17 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+import sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+
+# Include BOOTSTRAP3_FOLDER in path
+BOOTSTRAP3_FOLDER = os.path.abspath(os.path.join(BASE_DIR, '..', 'bootstrap3'))
+if BOOTSTRAP3_FOLDER not in sys.path:
+    sys.path.insert(0, BOOTSTRAP3_FOLDER)
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -27,6 +36,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# cache settings
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://127.0.0.1:6379/0",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 
 # Application definition
 
@@ -39,7 +58,17 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app.apps.AppConfig',
+    'bootstrap3',
 )
+
+
+BOOTSTRAP3 = {
+    'set_required': False,
+    'error_css_class': 'bootstrap3-error',
+    'required_css_class': 'bootstrap3-required',
+    'javascript_in_head': True,
+}
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -51,6 +80,8 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'zqxt.middleware.BlockedIpMiddleware',
+    'app.middleware.ShowSqlMiddleware',
 )
 
 ROOT_URLCONF = 'mysite.urls'

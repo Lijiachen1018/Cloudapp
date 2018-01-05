@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.urlresolvers import reverse
+
 
 '''STATUS_CHOICES = (
     ('u', 'un_go'),
@@ -42,10 +44,16 @@ class Group(models.Model):
     g_content = models.TextField(max_length=100, null=True, blank=True)
     g_state = models.CharField(max_length=1, default='DEFAULT VALUE')
     g_country = models.ForeignKey(Country, related_name='group_country')
-    g_createdtime = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    g_createdtime = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.g_name
+
+    class Meta:
+        ordering = ['-g_createdtime']
+
+    def get_absolute_url(self):
+        return reverse('app:detail', kwargs={'g_id': self.pk})
 
 
 class Comment(models.Model):
@@ -55,7 +63,7 @@ class Comment(models.Model):
     created_time = models.DateTimeField(auto_now_add=True, null=True, blank=True)
 
     def __str__(self):
-        return self.detail
+        return self.detail[:20]
 
 
 class GroupMember(models.Model):
