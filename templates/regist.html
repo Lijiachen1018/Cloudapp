@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>register</title>
-</head>
-<body>
-<h1>register page</h1>
+{% extends "base.html" %}
+
+{% block title %}register{% endblock %}
+
+{% block content %}
+<h1>register</h1>
 <form method = 'post' enctype="multipart/form-data">
     {% csrf_token %}
     {{uf.as_p}}
@@ -13,5 +11,4 @@
 </form>
 <br>
 <a href="/books/login/">login</a>
-</body>
-</html>
+{% endblock %}
