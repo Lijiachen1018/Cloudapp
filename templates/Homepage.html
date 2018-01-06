@@ -36,14 +36,17 @@
 							<figcaption>
 								<h2>{{ country.c_name }}</h2>
 								<p>Click to see groups</p>
-								<a href="groupList.html/{{ country.id }}">View more</a>
+								<!--a href="groupList.html/{{ country.id }}">View more</a-->
+								<a href="books/groupList/{{ country.id }}">View more</a>
 							</figcaption>
 						</figure>
 					</div>
 				</div>
                 {% endfor %}
 				<!-- end portfolio item -->
-
 			</div>
 		</section>
+		<p id="back-top">
+			<a href="#top"><i class="fa fa-angle-up"></i></a>
+		</p>
 {% endblock %}

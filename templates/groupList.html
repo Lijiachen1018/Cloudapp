@@ -3,13 +3,6 @@
 {% block title %}Grouplist{% endblock %}
 
 {% block content %}
-
-<header style="width: 100%; text-align: right;">
-    <a href="createNewGroup.html" style="margin-right: 15px; margin-top: 10px;">
-        Create new group
-    </a>
-</header>
-
 <div style="width: 100%; height: 40px; text-align: center;">
     <form id="search for groups" onsubmit="" name="SearchForm" action="groupList.html" >
         <input type="text" id="city-search" placeholder="Search City or Group" style="width:50%;">
@@ -17,8 +10,8 @@
     </form>
 </div>
 
-<h1 style="margin-left: 15px"><a href="groupList.html/{{ country.id }}">Groups going to {{ country.c_name }}</a></h1>
-
+<h1 style="margin-left: 15px"><a href="books/groupList/{{ country.id }}">Groups going to {{ country.c_name }}</a></h1>
+<!--h1 style="margin-left: 15px"><a href="groupList.html/{{ country.id }}">Groups going to {{ country.c_name }}</a></h1-->
 <div id="whole-content" style="width: 100%; height: 100%;">
 
     <!-- /.container  to insert loop here-->
