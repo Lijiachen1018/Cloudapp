@@ -114,7 +114,7 @@ DATABASES = {
         'NAME': 'mydb',
         'USER':'root',
         'PASSWORD':'123456',
-        'HOST':'127.0.0.1',
+        'HOST':'/cloudsql/lets-travel-190705:europe-west2:travel',
         'PORT':'3306',
     }
 }
