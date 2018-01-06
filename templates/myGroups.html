@@ -8,7 +8,8 @@
     <!-- cards again-->
     {% for m_group in m_groups %}
     <div class="cards cards-borderless" style="float: left; height: 200px; width: 20%; margin-left: 2%; margin-top:15px;">
-        <a class="card" href="myGroupDetail_member.html/{{m_group.id}}">
+        <!--a class="card" href="myGroupDetail_member.html/{{m_group.id}}"-->
+        <a class="card" href="books/myGroupDetail_member/{{m_group.id}}">
             <img id="city img" src="/templates/images/demo/portfolio-2.jpg" alt="">
             <div class="card-heading"><strong id="group name">GroupName:{{m_group.g_name}}</strong></div>
             <div class="card-content text-muted">
@@ -27,7 +28,8 @@
     <!-- cards again-->
     {% for o_group in o_groups %}
     <div class="cards cards-borderless" style="float: left; height: 200px; width: 20%; margin-left: 2%; margin-top:15px;">
-        <a class="card" href="myGroupDetail_organiser.html/{{o_group.id}}">
+        <!--a class="card" href="myGroupDetail_organiser.html/{{o_group.id}}"-->
+        <a class="card" href="books/myGroupDetail_organiser/{{o_group.id}}">
             <img id="city img1" src="/templates/images/demo/portfolio-2.jpg" alt="">
             <div class="card-heading"><strong id="group name1">GroupName:{{o_group.g_name}}</strong></div>
             <div class="card-content text-muted">

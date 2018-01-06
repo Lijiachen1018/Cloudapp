@@ -2,13 +2,13 @@
 {% block head %}
     <script>
         function quitFunction() {
-            window.location.href="index.html";
+            window.location.href="books/index";
         }
         function deleteFunction() {
-            window.location.href="myGroups.html";
+            window.location.href="books/myGroups";
         }
         function completeFunction() {
-            window.location.href="myGroups.html";
+            window.location.href="books/myGroups";
         }
     </script>
 {% endblock %}
@@ -19,7 +19,8 @@
     <!--information on the left of this page-->
 
     <div class="container" id="section-left" style="height: 100%; width: 20%; float: left; background-color: rgba(214,214,214,0.24);">
-        <h2 id="group name"> <a href="myGroupDetail_member.html/{{m_group.id}}"> Group Name:{{m_group.g_name}}</a></h2>
+        <!--h2 id="group name"> <a href="myGroupDetail_member.html/{{m_group.id}}"> Group Name:{{m_group.g_name}}</a></h2-->
+        <h2 id="group name"> <a href="books/myGroupDetail_member/{{m_group.id}}"> Group Name:{{m_group.g_name}}</a></h2>
         <div>
             <p>
                 <button id="btn1" type="button" class="btn" data-toggle="modal" data-target="#collapseExample">View the Members</button>
