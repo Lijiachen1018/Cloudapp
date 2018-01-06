@@ -30,7 +30,7 @@ def regist(req):
             firstname = uf.cleaned_data['firstname']
             #添加到数据库
             User.objects.create(username= username,password=password,email=email,firstname=firstname,lastname=lastname)
-            return HttpResponse('regist success!!')
+            return render(req,'groupList.html')
     else:
         uf = UserFormRe()
 
@@ -52,7 +52,14 @@ def login(req):
                 response = HttpResponseRedirect('/books/index/')
                 #将username写入浏览器cookie,失效时间为3600
                 response.set_cookie('username',username,3600)
-                return response
+ # !!!!!!看这里!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                # !!!!!!!!!!!!!!!!!看这里!!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!!!!!!!!!看这里!!!!!!!!!!!!!!!!!!!!!!!!!!
+                # !!看这里!!!!!!!!!!!!!!!!!!!!!!!!!!
+# !!!!!!!!!!!!!!!!!!!!!!!!看这里!!!!!!!!!!!!!!!!!!!!!!!!!!
+                # 这里我想让它转到‘我的小组’这个页面，不知道应该用render 还是render_to_response 还是HttpResponseredirect！！！！！
+                # 而且要传值
+                return render(req,'myGroupDetail_member.html')
             else:
                 #比较失败，还在login
                 return HttpResponseRedirect('/books/login/')
@@ -144,7 +151,7 @@ def my_group(request):
 
     else:
         # login in
-        return render_to_response('login.html')
+        return render_to_response('Login.html')
 
 
 # 浏览 my organised group list  ok
