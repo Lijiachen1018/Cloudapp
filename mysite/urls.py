@@ -1,13 +1,13 @@
-from django.conf.urls import patterns, url, include
+from django.conf.urls import include, url
 from django.contrib import admin
 admin.autodiscover()
 
 from mysite import views
 
-urlpatterns = patterns('',
-    (r'^admin/', include(admin.site.urls)),
-    ('^$', views.Homepage),
-    (r'^books/', include('books.urls')),
-    ('^Homepage/$', views.Homepage),
+urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
+    url('^$', views.Homepage),
+    url(r'^books/', include('books.urls')),
+    url('^Homepage/$', views.Homepage),
     #('^grouplist/$', views.grouplist),
-)
+]
