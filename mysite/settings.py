@@ -34,7 +34,7 @@ SECRET_KEY = '=^id0uo2kuvkv@$8z*k*3ci1fm2zidvmyhg#p%2ki!82lmi9=y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['comp3207-191316.appspot.com', 'localhost', '127.0.0.1']
 
 # cache settings
 CACHES = {
