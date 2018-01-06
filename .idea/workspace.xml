@@ -2,22 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a2426b2c-2154-49b6-9a62-c0ceae7b815a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mysite.iml" afterPath="$PROJECT_DIR$/.idea/mysite.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Homepage.html" afterPath="$PROJECT_DIR$/Homepage.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/urls.py" afterPath="$PROJECT_DIR$/books/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/.idea/workspace.xml" afterPath="$PROJECT_DIR$/templates/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/Homepage.html" afterPath="$PROJECT_DIR$/templates/Homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/create_new_group.html" afterPath="$PROJECT_DIR$/templates/create_new_group.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/groupList.html" afterPath="$PROJECT_DIR$/templates/groupList.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/group_detail.html" afterPath="$PROJECT_DIR$/templates/group_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/index.html" afterPath="$PROJECT_DIR$/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/myGroupDetail_member.html" afterPath="$PROJECT_DIR$/templates/myGroupDetail_member.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/myGroupDetail_organiser.html" afterPath="$PROJECT_DIR$/templates/myGroupDetail_organiser.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/myGroups.html" afterPath="$PROJECT_DIR$/templates/myGroups.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/regist.html" afterPath="$PROJECT_DIR$/templates/regist.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/books/views.py" afterPath="$PROJECT_DIR$/books/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/settings.py" afterPath="$PROJECT_DIR$/mysite/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/urls.py" afterPath="$PROJECT_DIR$/mysite/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mysite/views.py" afterPath="$PROJECT_DIR$/mysite/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1585">
-              <caret line="114" column="74" lean-forward="true" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
+              <caret line="114" column="74" lean-forward="false" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -45,8 +34,8 @@
       <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/books/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="285">
+              <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -598,14 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1585">
-          <caret line="114" column="74" lean-forward="true" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -614,10 +595,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1585">
+          <caret line="114" column="74" lean-forward="false" selection-start-line="114" selection-start-column="74" selection-end-line="114" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/books/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        <state relative-caret-position="285">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>

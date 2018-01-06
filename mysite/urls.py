@@ -6,8 +6,8 @@ from mysite import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url('^$', views.Homepage),
+    url(r'^$', views.Homepage),
     url(r'^books/', include('books.urls')),
-    url('^Homepage/$', views.Homepage),
+    url(r'^Homepage/$', views.Homepage),
     #('^grouplist/$', views.grouplist),
 ]

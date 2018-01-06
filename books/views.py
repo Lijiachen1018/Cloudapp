@@ -34,7 +34,7 @@ def regist(req):
     else:
         uf = UserFormRe()
 
-    return render_to_response('regist.html',{'uf':uf}, context_instance=RequestContext(req))
+    return render(req,'regist.html',{'uf':uf})
 
 
 #登陆
@@ -58,7 +58,7 @@ def login(req):
                 return HttpResponseRedirect('/books/login/')
     else:
         uf = UserForm()
-    return render_to_response('Login.html',{'uf':uf},context_instance=RequestContext(req))
+    return render(req,'Login.html',{'uf':uf})
 
 
 #登陆成功
