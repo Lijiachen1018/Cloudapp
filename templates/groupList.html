@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>GroupList</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}Grouplist{% endblock %}
+
+{% block content %}
 
 <header style="width: 100%; text-align: right;">
     <a href="createNewGroup.html" style="margin-right: 15px; margin-top: 10px;">
@@ -43,6 +38,4 @@
     {% endfor %}
 
 </div>
-
-</body>
-</html>
+{% endblock %}

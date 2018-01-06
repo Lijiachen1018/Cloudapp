@@ -1,24 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Group Detail</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
+{% extends "base.html" %}
+{% block head %}
+<script>
+    function joinFunction() {
+        window.location.href="myGroupDetail.html";
+    }
+</script>
+{% endblock %}
+{% block title %}Group Detail{% endblock %}
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
-
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
-
-    <script>
-        function joinFunction() {
-            window.location.href="myGroupDetail.html";
-        }
-    </script>
-</head>
-
+{% block content %}
 <h1 style="margin-left: 20px">DETAILS</h1>
-
-<body>
 <div class="whole-container"  style="margin-top:10%;text-align: center">
 
     <h2><a href="/group_detail.html/{{group.id}}">Group Name:{{group.g_name}}</a></h2>
@@ -56,10 +47,10 @@
         <h3>Organiser:{{group.g_organiser}}</h3>
         <h3>Gathering Place:{{group.g_place}}</h3>
 
-        <!-- 对话框触发按钮 -->
+        <!--  dialog active button -->
         <a type="button" id="join-group" class="btn btn-info"  data-toggle="modal" data-target="#myModal">JOIN IN</a>
 
-        <!-- 对话框HTML -->
+        <!--  dialog HTML -->
         <div class="modal fade" id="myModal">
             <div class="modal-dialog">
                 <div class="modal-content" style="text-align: start">
@@ -78,7 +69,6 @@
             </div>
         </div>
     </div>
-
 </div>
-</body>
-</html>
+{% endblock %}
+

@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" style="height: 100%;">
-<head>
-    <meta charset="UTF-8">
-    <title>My Group</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
+{% extends "base.html" %}
+{% block head %}
     <script>
         function quitFunction() {
             window.location.href="index.html";
@@ -17,8 +11,10 @@
             window.location.href="myGroups.html";
         }
     </script>
-</head>
-<body style="height: 100%;">
+{% endblock %}
+{% block title %}My Group{% endblock %}
+
+{% block content %}
 <div id="whole" class="whole-container" style="width: 100%; height: 100%;">
     <!--information on the left of this page-->
 
@@ -56,11 +52,11 @@
         <h3 id="organiser">Organiser:{{m_group.g_organiser}}</h3>
         <h3 id="gathering place">Gathering Place:{{m_group.g_place}}</h3>
 
-        <!-- 对话框触发按钮 -->
+        <!-- active button -->
         <a type="button" id="quit-group" class="btn btn-info"  data-toggle="modal" data-target="#alertIfQuit">QUIT</a>
 
 
-        <!-- 对话框HTML，warning if quit -->
+        <!-- dialog HTML，warning if quit -->
         <div class="modal fade" id="alertIfQuit">
             <div class="modal-dialog">
                 <div class="modal-content" style="text-align: start">
@@ -79,7 +75,6 @@
             </div>
         </div>
     </div>
-
         <!--comments space-->
     <div class="container" id="section-right" style="height: 100%; width: 78%; float: left;">
         <div id="all-comments">
@@ -119,5 +114,4 @@
     </div>
 
 </div>
-</body>
-</html>
+{% endblock %}

@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Groups</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/css/zui.min.css">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/lib/jquery/jquery.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/zui/1.7.0/js/zui.min.js"></script>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %}My Groups{% endblock %}
+
+{% block content %}
 <h1 style="margin-left: 2%;">Groups you are in:</h1>
 <div class="whole-container">
     <!-- cards again-->
@@ -46,5 +41,4 @@
     {% endfor %}
 
 </div>
-</body>
-</html>
+{% endblock %}
