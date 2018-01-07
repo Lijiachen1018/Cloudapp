@@ -34,7 +34,7 @@ SECRET_KEY = '=^id0uo2kuvkv@$8z*k*3ci1fm2zidvmyhg#p%2ki!82lmi9=y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['comp3207-191316.appspot.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
 
 # cache settings
 CACHES = {
@@ -108,17 +108,49 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
-        'USER':'root',
-        'PASSWORD':'123456',
-        'HOST':'/cloudsql/lets-travel-190705:europe-west2:travel',
-        'PORT':'3306',
-    }
-}
+# Check to see if MySQLdb is available; if not, have pymysql masquerade as
+# MySQLdb. This is a convenience feature for developers who cannot install
+# MySQLdb locally; when running in production on Google App Engine Standard
+# Environment, MySQLdb will be used.
+try:
+    import MySQLdb  # noqa: F401
+except ImportError:
+    import pymysql
+    pymysql.install_as_MySQLdb()
 
+# [START db_setup]
+if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
+    # Running on production App Engine, so connect to Google Cloud SQL using
+    # the unix socket at /cloudsql/<your-cloudsql-connection string>
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            # 'HOST': '/cloudsql/comp3207-travel-planner-189701:us-central1:instance1',
+            'HOST':'/cloudsql/lets-travel-190705:europe-west2:travel',
+            'NAME': 'travel_planner_db',
+            'USER': 'root',
+            # 'PASSWORD': 'root',
+            'PASSWORD': '123456',
+        }
+    }
+else:
+    # Running locally so connect to either a local MySQL instance or connect to
+    # Cloud SQL via the proxy. To start the proxy via command line:
+    #
+    #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
+    #
+    # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '127.0.0.1',
+            'PORT': '3306',
+            'NAME': 'travel_planner_db2',
+            'USER': 'root',
+            'PASSWORD': '',
+        }
+    }
+# [END db_setup]
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -139,4 +171,6 @@ USE_TZ = True
 
 STATIC_URL = '/templates/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'templates'),)
+STATICFILES_DIRS = (
+	os.path.join(BASE_DIR, 'templates'),
+)
